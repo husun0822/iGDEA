@@ -14,7 +14,7 @@ note: i. the design matrix's first column must be all 1s, which serves as an int
     
     
 A. Example vignette:
-# suppose we have a "countdata" object for gene count data and a "modelMatrix" object for design matrix information
+\# suppose we have a "countdata" object for gene count data and a "modelMatrix" object for design matrix information
 source("main.R")
 mobject = DES_deseq(countdata,modelMatrix)
 
@@ -28,7 +28,7 @@ goodsample = F
 while(goodsample==F){
   simdata = makeExampleDESeqDataSet(betaSD = 1)
   countdata = DESeq2::counts(simdata)
-  # our function cannot handle the case of allzero gene
+  \# our function cannot handle the case of allzero gene
   allzero = apply(countdata,1,function(x) ifelse(sum(x==0)==length(x),0,1))
   if(sum(allzero==0)==0){
     goodsample = T
